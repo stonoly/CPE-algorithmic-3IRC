@@ -129,13 +129,16 @@ class ChainList:
         return self.size == 0
 
     def display(self) -> None:
+        print(f"-----------------------------------")
         print(f"Premier élément: {self.first.data}")
         print(f"Dernier élément: {self.last.data}")
         print(f"Taille de la liste: {self.size}")
+        print()
         current = self.first
         while current is not None:
             print(current, end="")
             current = current.next
+        print()
         print()
 
 
