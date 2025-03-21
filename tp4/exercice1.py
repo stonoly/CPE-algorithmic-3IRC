@@ -17,7 +17,7 @@ def sort_by_selection(list: list) -> list:
     return list
 
 # Question 2. Quel est l’invariant de boucle maintenu par cet algorithme ?
-# Les i éléments de la liste sont triés et ne bouge pas de position. 
+# Les i éléments de la liste sont triés et ne bouge pas de position et sont plus petit que les element d'indices supérieur à i.
 
 # =Question 3. Donnez la complexité de votre algorithme dans le pire cas sous la forme d’un Θ(...). 
 #            Est-ce que la complexité dans le meilleur cas est meilleure ?
