@@ -21,7 +21,39 @@
 #
 
 def sort_by_fusion(list: list) -> list:
-    return list
+    middle_list = (len(list) + 1) // 2
+    if len(list) > 2:
+
+        first_slice_list = list[:middle_list]
+        last_slice_list = list[middle_list:]
+
+        first_slice_sort = sort_by_fusion(first_slice_list)
+        last_slice_sort = sort_by_fusion(last_slice_list)
+
+        sorted_list = []
+
+        while first_slice_sort and last_slice_sort:
+            if first_slice_sort[0] >= last_slice_sort[0]:
+                sorted_list.append(last_slice_sort[0])
+                last_slice_sort.pop(0)
+
+            else:
+                sorted_list.append(first_slice_sort[0])
+                first_slice_sort.pop(0)
+
+        if (first_slice_sort == []):
+            sorted_list.extend(last_slice_sort)
+        else:
+            sorted_list.extend(first_slice_sort)
+
+        return sorted_list
+
+    else:
+
+        if list[0] > list[len(list) - 1] and len(list) > 1:
+            list[0], list[len(list) - 1] = list[len(list) - 1], list[0]
+
+        return list
 
 if __name__ == "__main__":
 
